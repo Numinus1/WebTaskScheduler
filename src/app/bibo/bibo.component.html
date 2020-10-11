@@ -1,0 +1,86 @@
+<header class="header clearfix">
+    <div [ngStyle]="{backgroundImage:'url(../images/plane.jpeg)'}" >
+        <h1></h1>
+    </div>
+    <nav>
+        <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+                <button type="button"  class="btn btn-primary">
+                  Flights
+                </button>
+            </li>
+            <li class="nav-item">
+                <button #addPostBtn type="button" (click) = "goHome()" class="btn btn-link"  data-toggle="modal" data-target="#exampleModal">
+                    Hotels
+                  </button>
+            </li>
+            <li class="nav-item">
+                 <button type="button" class="btn btn-link">
+                  Bus
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-link">
+                  IRCTC Trains
+               </button>
+           </li>
+           <li class="nav-item">
+            <button type="button" class="btn btn-link">
+              Cabs
+           </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-link">
+                  Visa
+               </button>
+           </li>
+           <li class="nav-item">
+            <button type="button" class="btn btn-link">
+              More+
+           </button>
+       </li>
+       <li class="nav-item">
+        <button type="button" (click) = "goRegister()" class="btn btn-link">
+          Register
+       </button>
+   </li>
+        </ul>
+    </nav>
+    <h3 class="text-muted">goibibo.com</h3>
+</header>
+ 
+<main role="main">
+    <br><br>
+    <form class="form-signin" (ngSubmit) = "f.form.valid && onSubmit()" #f="ngForm">
+        <h2 class="form-signin-heading">Book Domestic and International Flight Tickets</h2>
+        <br>
+        <input type="radio" id="one" name="triptype" [(ngModel)] = "flight.triptype" value="one">
+        <label for="male">One Way</label><br>
+        <input type="radio" id="round" name="triptype" [(ngModel)] = "flight.triptype" value="round">
+        <label for="female">Round Trip</label><br>
+        <input type="radio" id="multi" name="triptype" [(ngModel)] = "flight.triptype" value="multi">
+        <label for="other">Multicity</label>
+        <br><br><br>    
+            <label for="pointA" class="sr-only">From</label>
+           <input name="from" type="text" id="from" [(ngModel)] = "flight.from" class="form-control" placeholder="From" required autofocus>
+           <div *ngIf="flight.from.errors.required">
+                Starting Destination is Required
+           </div>
+           <label for="pointB" class="sr-only">Destination</label>
+           <input name="pointB"  type="text" id="pointB" [(ngModel)] = "flight.destination" class="form-control" placeholder="Destination" required>
+        <br><br>
+        <label for="departure">Departure:</label>
+        <input type="date" id="departure" [(ngModel)] = "flight.departure" name="departure">
+        <label for="return">Return:</label>
+        <input type="date" id="return" [(ngModel)] = "flight.return" name="return">
+        <br><br><br>
+        <label for="adults" class="sr-only">Adults:</label>
+        <input name="adults" type="number" id="adults" [(ngModel)] = "flight.adults" class="form-control" placeholder="0" required>
+        <label for="children" class="sr-only">Children:</label>
+        <input name="children"  type="number" id="children" [(ngModel)] = "flight.children" class="form-control" placeholder="0" required>
+        <label for="infants" class="sr-only">Infants:</label>
+        <input name="infants"  type="number" id="infants" [(ngModel)] = "flight.infants" class="form-control" placeholder="0" required>
+        <br><br>
+        <button class="btn btn-lg btn-primary btn-block"  (click) = "onSubmit()" type="button">Search</button>
+    </form>    
+</main>

@@ -1,0 +1,69 @@
+<header class="header clearfix">
+    <nav>
+        <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+                <button type="button"  (click) = "goHome()" class="btn">
+                  Flights
+                </button>
+            </li>
+            <li class="nav-item">
+                <button #addPostBtn type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">
+                    Hotels
+                  </button>
+            </li>
+            <li class="nav-item">
+                 <button type="button" class="btn btn-link">
+                  Bus
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-link">
+                  IRCTC Trains
+               </button>
+           </li>
+           <li class="nav-item">
+            <button type="button" class="btn btn-link">
+              Cabs
+           </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-link">
+                  Visa
+               </button>
+           </li>
+           <li class="nav-item">
+            <button type="button" class="btn btn-link">
+              More+
+           </button>
+       </li>
+        </ul>
+    </nav>
+    <h3 class="text-muted">goibibo.com</h3>
+</header>
+ 
+<main role="main">
+    <br><br>
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Book Domestic and International Flight Tickets</h2>
+        <br>
+        <input type="radio" id="India" name="location"  value="India">
+        <label for="India">India</label><br>
+        <input type="radio" id="International" name="location"  value="International">
+        <label for="International">International</label><br>
+        <br><br><br>
+            <label for="where" class="sr-only">Where</label>
+           <input name="where" type="text" id="where" class="form-control" placeholder="Where" required autofocus>
+           <br><br>
+        <label for="checkin">Check-In:</label>
+        <input type="date" id="checkin" name="checkin">
+        <label for="checkout">Check-Out:</label>
+        <input type="date" id="checkout" name="checkout">
+        <br><br><br>
+        <label for="guests" class="sr-only">Guests:</label>
+        <input name="guests" type="number" id="guests" class="form-control" placeholder="0" required>
+        <label for="rooms" class="sr-only">Rooms:</label>
+        <input name="rooms"  type="number" id="rooms"  class="form-control" placeholder="0" required>
+        <br><br>
+        <button class="btn btn-lg btn-primary btn-block"  type="button">Search Hotels</button>
+    </form>    
+</main>
